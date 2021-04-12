@@ -1,0 +1,26 @@
+extends layout.pug
+
+mixin article(id, titre, description, date, auteur, categorie)
+    article.arcticles
+        h1
+            a(href='/article/'+ id)= titre
+        p= description.slice(0, 100) + '... '
+            a(href='/article/'+ id) Lire la suite
+        footer
+            span.infos
+                |  Publi&eacute; #{new Date(date).toLocaleString()}, par 
+                em= auteur + ' '
+                span.categorie
+                    |  #{categorie}
+
+block variables
+    - let title = 'Accueil';
+
+block content
+    main.container
+        h1 Bienvenue sur mon blog
+
+        p liste des derniers articles du blog :
+
+        each article in articles
+            +article(article._id, article.title, article.content, articles.dateCreated, article.author.name, article.category.title)

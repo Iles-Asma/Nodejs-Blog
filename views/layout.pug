@@ -1,0 +1,24 @@
+block variables
+
+<!DOCTYPE html>
+html(lang="fr")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        title #{title} - node-blog
+        link(rel="stylesheet",  href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;800&display=swap")
+        link(rel="stylesheet", href="styles.css")
+    body
+
+        header
+            .container
+                nav
+                    a.buttn(href='/admin')
+                    
+                        |  Admin
+                h1
+                    a(href='/' title="Retour à l'accueil") 
+                
+
+        block content
